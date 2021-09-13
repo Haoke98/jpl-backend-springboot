@@ -30,4 +30,8 @@ public class ArticleDO {
     public Long getId() {
         return id;
     }
+
+    public String getCover() {
+        return "https://japanese.izbasar.link/" + cover;
+    }
 }

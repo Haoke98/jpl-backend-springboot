@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
+
 @Getter
 @Setter
 @Entity(name = "collection")
@@ -27,5 +28,9 @@ public class CollectionDO {
 
     public Long getId() {
         return id;
+    }
+
+    public String getCover() {
+        return "https://japanese.izbasar.link/" + cover;
     }
 }

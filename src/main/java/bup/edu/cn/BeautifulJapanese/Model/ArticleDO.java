@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import java.sql.Date;
 
 @Setter
 @Getter
@@ -20,6 +21,9 @@ public class ArticleDO {
     private String cover;
     private String url;
     private Boolean hot;
+    private Date publishedAt;
+    @OneToOne
+    private ArticleTagDO tag;
     @OneToOne
     private CollectionDO collection;
 

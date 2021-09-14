@@ -1,6 +1,7 @@
 package bup.edu.cn.BeautifulJapanese.repository;
 
 import bup.edu.cn.BeautifulJapanese.Model.ArticleDO;
+import bup.edu.cn.BeautifulJapanese.Model.ArticleTagDO;
 import bup.edu.cn.BeautifulJapanese.Model.CollectionDO;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -10,4 +11,6 @@ public interface ArticleRepository extends PagingAndSortingRepository<ArticleDO,
     List<ArticleDO> findArticleDOByHot(boolean isHot);
 
     List<ArticleDO> findArticleDOByCollection(CollectionDO collection);
+
+    List<ArticleDO> findArticleDOByTag(ArticleTagDO tag);
 }

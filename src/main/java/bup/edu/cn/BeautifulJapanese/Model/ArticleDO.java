@@ -18,6 +18,7 @@ public class ArticleDO {
     @GeneratedValue
     private Long id;
     private String title;
+    private String subTitle;
     private String cover;
     private String url;
     private Boolean hot;

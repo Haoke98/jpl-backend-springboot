@@ -7,6 +7,9 @@ import bup.edu.cn.BeautifulJapanese.repository.ArticleRepository;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleTagRepository;
 import bup.edu.cn.BeautifulJapanese.repository.CollectionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,6 +51,9 @@ public class ArticleController {
 
     @GetMapping(path = "/tag")
     RestResponseDTO getAllTags() {
-        return RestResponseDTO.success(articleTagRepository.findAll());
+        Sort.Order order = Sort.Order.asc("id");
+        Sort sort = Sort.by(order);
+        Pageable pageable = PageRequest.of(0, 10, sort);
+        return RestResponseDTO.success(articleTagRepository.findAll(pageable));
     }
 }

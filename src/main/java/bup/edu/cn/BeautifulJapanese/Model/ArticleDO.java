@@ -11,7 +11,7 @@ import java.sql.Date;
 
 @Setter
 @Getter
-@Entity(name = "article")
+@Entity(name = "jpl_article")
 public class ArticleDO {
 
     @Id
@@ -24,7 +24,7 @@ public class ArticleDO {
     private Boolean hot;
     private Date publishedAt;
     @OneToOne
-    private ArticleTagDO tag;
+    private TagDO tag;
     @OneToOne
     private CollectionDO collection;
 
@@ -37,6 +37,6 @@ public class ArticleDO {
     }
 
     public String getCover() {
-        return "https://japanese.izbasar.link/" + cover;
+        return "http://59.110.225.84/" + cover;
     }
 }

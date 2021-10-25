@@ -1,8 +1,8 @@
 package bup.edu.cn.BeautifulJapanese.Controllers;
 
 import bup.edu.cn.BeautifulJapanese.Model.ArticleDO;
-import bup.edu.cn.BeautifulJapanese.Model.ArticleTagDO;
-import bup.edu.cn.BeautifulJapanese.Model.RestResponseDTO;
+import bup.edu.cn.BeautifulJapanese.Model.TagDO;
+import bup.edu.cn.BeautifulJapanese.framework.RestResponseDTO;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleRepository;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleTagRepository;
 import bup.edu.cn.BeautifulJapanese.repository.CollectionRepository;
@@ -42,7 +42,7 @@ public class ArticleController {
         if (tagId == 0) {
             return RestResponseDTO.success(articleRepository.findAll());
         } else {
-            ArticleTagDO tag = articleTagRepository.findArticleTagDOById(tagId);
+            TagDO tag = articleTagRepository.findArticleTagDOById(tagId);
             List<ArticleDO> articles = articleRepository.findArticleDOByTag(tag);
             return RestResponseDTO.success(articles);
         }

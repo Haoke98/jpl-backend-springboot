@@ -1,6 +1,5 @@
-package bup.edu.cn.BeautifulJapanese.Model;
+package bup.edu.cn.BeautifulJapanese.framework;
 
-import bup.edu.cn.BeautifulJapanese.framework.RestCode;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -11,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity(name = "collection")
+@Entity(name = "jpl_collection")
 public class CollectionDO {
     @Id
     @GeneratedValue
@@ -31,6 +31,6 @@ public class CollectionDO {
     }
 
     public String getCover() {
-        return "https://japanese.izbasar.link/" + cover;
+        return "http:/59.225.110.84/" + cover;
     }
 }

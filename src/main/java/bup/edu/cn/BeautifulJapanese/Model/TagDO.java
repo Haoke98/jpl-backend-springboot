@@ -9,8 +9,8 @@ import javax.persistence.Id;
 
 @Getter
 @Setter
-@Entity(name = "article_tag")
-public class ArticleTagDO {
+@Entity(name = "jpl_tag")
+public class TagDO {
     @Id
     @GeneratedValue
     private Long id;

@@ -1,22 +1,28 @@
-package bup.edu.cn.BeautifulJapanese.Model;
+package bup.edu.cn.BeautifulJapanese.models;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.sql.Date;
 
 @Setter
 @Getter
+@EntityListeners(AuditingEntityListener.class)
 @Entity(name = "jpl_article")
 public class ArticleDO {
 
     @Id
     @GeneratedValue
     private Long id;
+    @CreatedDate
+    private Date createdAt;
+    @LastModifiedDate
+    private Date updatedAt;
+    private Date deletedAt;
     private String title;
     private String subTitle;
     private String cover;
@@ -27,16 +33,4 @@ public class ArticleDO {
     private TagDO tag;
     @OneToOne
     private CollectionDO collection;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getCover() {
-        return "http://59.110.225.84/" + cover;
-    }
 }

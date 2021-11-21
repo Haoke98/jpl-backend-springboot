@@ -1,11 +1,10 @@
 package bup.edu.cn.BeautifulJapanese.Controllers;
 
-import bup.edu.cn.BeautifulJapanese.Model.ArticleDO;
-import bup.edu.cn.BeautifulJapanese.Model.TagDO;
-import bup.edu.cn.BeautifulJapanese.framework.RestResponseDTO;
+import bup.edu.cn.BeautifulJapanese.framework.RestResponse;
+import bup.edu.cn.BeautifulJapanese.framework.SC;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleRepository;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleTagRepository;
-import bup.edu.cn.BeautifulJapanese.repository.CollectionRepository;
+import bup.edu.cn.BeautifulJapanese.services.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -15,45 +14,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(path = "/article")
 public class ArticleController {
     @Autowired
     private ArticleRepository articleRepository;
     @Autowired
-    private CollectionRepository collectionRepository;
-    @Autowired
-    private ArticleTagRepository articleTagRepository;
+    private ArticleService articleService;
 
     @GetMapping(path = "/hot")
-    RestResponseDTO getHot() {
-        return RestResponseDTO.success(articleRepository.findArticleDOByHot(true));
+    RestResponse getHot() {
+        return new RestResponse().success(articleRepository.findArticleDOByHot(true));
     }
 
-    @GetMapping(path = "/collection")
-    RestResponseDTO getCollections() {
-        return RestResponseDTO.success(collectionRepository.findAll());
-    }
-
-    @GetMapping(path = "/ByTag")
-    RestResponseDTO getArticlesByTag(@RequestParam(name = "tagId", required = true, defaultValue = "-1") Long tagId) {
-        if (tagId == 0) {
-            return RestResponseDTO.success(articleRepository.findAll());
-        } else {
-            TagDO tag = articleTagRepository.findArticleTagDOById(tagId);
-            List<ArticleDO> articles = articleRepository.findArticleDOByTag(tag);
-            return RestResponseDTO.success(articles);
+    @GetMapping
+    RestResponse get(
+            @RequestParam(name = "tagId", required = false) Long tagId,
+            @RequestParam(defaultValue = "1", required = false) Integer pageNo,
+            @RequestParam(defaultValue = "5", required = false) Integer pageSize
+    ) {
+        if (pageNo <= 0) {
+            return RestResponse.error(SC.INVALID_PARAM_VALUE,"pageNo取值应为[1,N]");
         }
-    }
-
-
-    @GetMapping(path = "/tag")
-    RestResponseDTO getAllTags() {
-        Sort.Order order = Sort.Order.asc("id");
-        Sort sort = Sort.by(order);
-        Pageable pageable = PageRequest.of(0, 10, sort);
-        return RestResponseDTO.success(articleTagRepository.findAll(pageable));
+        if (tagId == null) {
+            return new RestResponse().success(articleService.getAllDTO1(pageNo - 1, pageSize));
+        }
+        return new RestResponse().success(articleService.getAllDTO1ByTag(tagId, pageNo, pageSize));
     }
 }

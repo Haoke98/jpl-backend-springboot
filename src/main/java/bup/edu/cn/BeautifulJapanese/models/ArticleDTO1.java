@@ -18,10 +18,10 @@ public class ArticleDTO1 {
 
     public ArticleDTO1(ArticleDTO dto) {
         this.id = dto.getId();
-        this.title = dto.getSubTitle();
+        this.title = dto.getTitle();
         this.subTitle = dto.getSubTitle();
         this.cover = dto.getCover();
-        this.url = dto.getCover();
+        this.url = dto.getUrl();
         this.hot = dto.getHot();
         this.publishedAt = dto.getPublishedAt();
         this.tag = dto.getTag();

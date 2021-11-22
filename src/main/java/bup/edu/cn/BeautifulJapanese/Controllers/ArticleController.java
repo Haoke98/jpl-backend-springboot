@@ -39,6 +39,6 @@ public class ArticleController {
         if (tagId == null) {
             return new RestResponse().success(articleService.getAllDTO1(pageNo - 1, pageSize));
         }
-        return new RestResponse().success(articleService.getAllDTO1ByTag(tagId, pageNo, pageSize));
+        return new RestResponse().success(articleService.getAllDTO1ByTag(tagId, pageNo-1, pageSize));
     }
 }

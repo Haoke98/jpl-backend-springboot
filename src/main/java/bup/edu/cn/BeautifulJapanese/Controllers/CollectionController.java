@@ -17,7 +17,10 @@ public class CollectionController {
     private CollectionService collectionService;
 
     @GetMapping
-    RestResponse get(@RequestParam Long id, @RequestParam(defaultValue = "1") Integer pageNo, @RequestParam(defaultValue = "5") Integer pageSize) {
+    RestResponse get(
+            @RequestParam(required = false) Long id,
+            @RequestParam(defaultValue = "1", required = false) Integer pageNo,
+            @RequestParam(defaultValue = "5", required = false) Integer pageSize) {
         if (id != null) {
             CollectionDTO1 dto1 = collectionService.getDTO1(id);
             if (dto1 == null) {
@@ -25,6 +28,6 @@ public class CollectionController {
             }
             return new RestResponse().success(dto1);
         }
-        return new RestResponse().success(collectionService.getAllDTO1s(pageNo, pageSize));
+        return new RestResponse().success(collectionService.getAllDTO1s(pageNo-1, pageSize));
     }
 }

@@ -38,30 +38,25 @@ public class ArticleService {
         return PageRequest.of(pageNo, pageSize, sort);
     }
 
-    public Page<ArticleDO> getAll(Integer pageNo, Integer pageSize) {
-        return articleRepository.findAll(getPageable(pageNo, pageSize));
-    }
-
-    public Page<ArticleDO> getAllByTag(TagDO tag, Integer pageNo, Integer pageSize) {
-        return articleRepository.findAllByTag(tag, getPageable(pageNo, pageSize));
-    }
-
-    public Page<ArticleDO> getAllByTag(Long tagId, Integer pagNo, Integer pageSize) {
-        TagDO tag = articleTagRepository.findArticleTagDOById(tagId);
-        return articleRepository.findAllByTag(tag, getPageable(pagNo, pageSize));
-    }
-
-    public Page<ArticleDTO1> getAllDTO1(Integer pageNo, Integer pageSize) {
-        Page<ArticleDO> page = getAll(pageNo, pageSize);
-        return new PageImpl<>(getDTO1s(page.getContent()), page.getPageable(), page.getTotalElements());
-    }
-
-    public Page<ArticleDTO1> getAllDTO1ByTag(Long tagId,Integer pageNo,Integer pageSize){
-        if (tagId==0){
-            return getAllDTO1(pageNo,pageSize);
+    public Page<ArticleDO> getAll(Boolean hot, Long tagId, Integer pageNo, Integer pageSize) {
+        if (hot == null) {
+            if (tagId == null) {
+                return articleRepository.findAll(getPageable(pageNo, pageSize));
+            }
+            TagDO tag = articleTagRepository.findArticleTagDOById(tagId);
+            return articleRepository.findAllByTag(tag, getPageable(pageNo, pageSize));
+        } else {
+            if (tagId == null) {
+                return articleRepository.findAllByHot(hot, getPageable(pageNo, pageSize));
+            }
+            TagDO tag = articleTagRepository.findArticleTagDOById(tagId);
+            return articleRepository.findAllByTagAndHot(tag, hot, getPageable(pageNo, pageSize));
         }
-        Page<ArticleDO> page = getAllByTag(tagId,pageNo,pageSize);
-        return new PageImpl<>(getDTO1s(page.getContent()),page.getPageable(),page.getTotalElements());
+    }
+
+    public Page<ArticleDTO1> getAllDTO1(Boolean hot, Long tagId, Integer pageNo, Integer pageSize) {
+        Page<ArticleDO> page = getAll(hot, tagId, pageNo, pageSize);
+        return new PageImpl<>(getDTO1s(page.getContent()), page.getPageable(), page.getTotalElements());
     }
 
     public ArticleDTO getDTO(ArticleDO article) {

@@ -16,6 +16,8 @@ public interface ArticleRepository extends PagingAndSortingRepository<ArticleDO,
 
     List<ArticleDO> findArticleDOByTag(TagDO tag);
 
+    Page<ArticleDO> findAllByHot(Boolean hot, Pageable pageable);
     Page<ArticleDO> findAllByTag(TagDO tag, Pageable pageable);
+    Page<ArticleDO> findAllByTagAndHot(TagDO tag,Boolean hot, Pageable pageable);
 
 }

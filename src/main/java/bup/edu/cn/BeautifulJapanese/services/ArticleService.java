@@ -60,20 +60,11 @@ public class ArticleService {
     }
 
     public ArticleDTO getDTO(ArticleDO article) {
-        ArticleDTO dto = new ArticleDTO();
-        dto.setId(article.getId());
-        dto.setTitle(article.getTitle());
-        dto.setSubTitle(article.getSubTitle());
-        dto.setHot(article.getHot());
-        dto.setUrl(article.getUrl());
-        dto.setPublishedAt(article.getPublishedAt());
-        dto.setTag(article.getTag());
-        if (article.getCover().startsWith("http")) {
-            dto.setCover(article.getCover());
-        } else {
-            dto.setCover(BASE_URL + article.getCover());
+        String cover = article.getCover();
+        if (!article.getCover().startsWith("http")) {
+            cover = BASE_URL + article.getCover();
         }
-        return dto;
+        return new ArticleDTO(article, cover);
     }
 
     public List<ArticleDTO> getDTOs(List<ArticleDO> articles) {
@@ -98,5 +89,15 @@ public class ArticleService {
             dto1s.add(getDTO1(article));
         }
         return dto1s;
+    }
+
+    public ArticleDTO1 getDTO1(Long id) {
+        ArticleDO article = articleRepository.findArticleDOById(id);
+        if (article != null) {
+            article.read();
+            articleRepository.save(article);
+            return getDTO1(article);
+        }
+        return null;
     }
 }

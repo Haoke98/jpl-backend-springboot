@@ -2,7 +2,7 @@ package bup.edu.cn.BeautifulJapanese.models;
 
 import lombok.Data;
 
-import java.sql.Date;
+import java.util.Date;
 
 @Data
 public class ArticleDTO {
@@ -13,8 +13,18 @@ public class ArticleDTO {
     private String url;
     private Boolean hot;
     private Date publishedAt;
+    private Long hasBeenReadTimes;
     private TagDO tag;
 
-    public ArticleDTO() {
+    public ArticleDTO(ArticleDO article, String cover) {
+        id = article.getId();
+        title = article.getTitle();
+        subTitle = article.getSubTitle();
+        hot = article.getHot();
+        url = article.getUrl();
+        publishedAt = article.getPublishedAt();
+        hasBeenReadTimes = article.getHasBeenReadTimes();
+        tag = article.getTag();
+        this.cover = cover;
     }
 }

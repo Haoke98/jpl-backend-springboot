@@ -1,7 +1,11 @@
 package bup.edu.cn.BeautifulJapanese.models;
 
+import bup.edu.cn.BeautifulJapanese.utils.TimeUtils;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.datetime.standard.DateTimeFormatterFactory;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Data
@@ -12,7 +16,7 @@ public class ArticleDTO {
     private String cover;
     private String url;
     private Boolean hot;
-    private Date publishedAt;
+    private String publishedAt;
     private Long hasBeenReadTimes;
     private TagDO tag;
 
@@ -22,9 +26,10 @@ public class ArticleDTO {
         subTitle = article.getSubTitle();
         hot = article.getHot();
         url = article.getUrl();
-        publishedAt = article.getPublishedAt();
+        publishedAt = TimeUtils.getDateString(article.getPublishedAt());
         hasBeenReadTimes = article.getHasBeenReadTimes();
         tag = article.getTag();
         this.cover = cover;
     }
+    public ArticleDTO(){}
 }

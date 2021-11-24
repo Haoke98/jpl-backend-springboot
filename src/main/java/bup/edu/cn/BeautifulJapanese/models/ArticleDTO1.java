@@ -5,27 +5,11 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ArticleDTO1 {
-    private Long id;
-    private String title;
-    private String subTitle;
-    private String cover;
-    private String url;
-    private Boolean hot;
-    private Date publishedAt;
-    private Long hasBeenReadTimes;
-    private TagDO tag;
+public class ArticleDTO1 extends ArticleDTO {
     private CollectionDTO collection;
 
-    public ArticleDTO1(ArticleDTO dto) {
-        this.id = dto.getId();
-        this.title = dto.getTitle();
-        this.subTitle = dto.getSubTitle();
-        this.cover = dto.getCover();
-        this.url = dto.getUrl();
-        this.hot = dto.getHot();
-        this.publishedAt = dto.getPublishedAt();
-        this.hasBeenReadTimes = dto.getHasBeenReadTimes();
-        this.tag = dto.getTag();
+    public ArticleDTO1(ArticleDO article, String cover,CollectionDTO collection) {
+        super(article, cover);
+        this.collection = collection;
     }
 }

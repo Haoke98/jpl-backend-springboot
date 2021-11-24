@@ -7,7 +7,6 @@ import bup.edu.cn.BeautifulJapanese.models.TagDO;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleRepository;
 import bup.edu.cn.BeautifulJapanese.repository.ArticleTagRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
@@ -22,14 +21,15 @@ import java.util.List;
  */
 @Service
 public class ArticleService {
-    @Value("${BASE_URL}")
-    private String BASE_URL;
+
     @Autowired
     private ArticleRepository articleRepository;
     @Autowired
     private CollectionService collectionService;
     @Autowired
     private ArticleTagRepository articleTagRepository;
+    @Autowired
+    private CommonService commonService;
 
     public Pageable getPageable(Integer pageNo, Integer pageSize) {
         Sort.Order order = Sort.Order.desc("createdAt");
@@ -60,11 +60,7 @@ public class ArticleService {
     }
 
     public ArticleDTO getDTO(ArticleDO article) {
-        String cover = article.getCover();
-        if (!article.getCover().startsWith("http")) {
-            cover = BASE_URL + article.getCover();
-        }
-        return new ArticleDTO(article, cover);
+        return new ArticleDTO(article, commonService.getFullCoverUrl(article.getCover()));
     }
 
     public List<ArticleDTO> getDTOs(List<ArticleDO> articles) {
@@ -77,10 +73,7 @@ public class ArticleService {
     }
 
     public ArticleDTO1 getDTO1(ArticleDO article) {
-        ArticleDTO dto = getDTO(article);
-        ArticleDTO1 dto1 = new ArticleDTO1(dto);
-        dto1.setCollection(collectionService.getDTO(article.getCollection()));
-        return dto1;
+        return new ArticleDTO1(article, commonService.getFullCoverUrl(article.getCover()), collectionService.getDTO(article.getCollection()));
     }
 
     public List<ArticleDTO1> getDTO1s(List<ArticleDO> articles) {

@@ -8,10 +8,10 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>bup.edu.cn</groupId>
+	<groupId>bupt.edu.cn</groupId>
 	<artifactId>beautiful_japanese</artifactId>
 	<version>0.0.1-RELEASE</version>
-	<name>BeautifulJapaneseBackend</name>
+	<name>旖旎日语-日语学习宝典（后端）</name>
 	<description>provide the support for the API and Data service.</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -78,6 +78,10 @@
 <!--			<groupId>org.springframework.boot</groupId>-->
 <!--			<artifactId>spring-boot-starter-actuator</artifactId>-->
 <!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

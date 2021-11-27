@@ -1,5 +1,5 @@
 <div align="center"><img width="200" src="https://codechina.csdn.net/uploads/-/system/group/avatar/506885/logo_196.png?width=72"/>
-<h1> 旖旎教育-后端 </h1>
+<h1> 旖旎教育(后端) </h1>
 
 简体中文 |  [English](./README.en.md)
 
@@ -9,12 +9,16 @@
 </div>
 
 [![star](https://gitee.com/chu1204505056/vue-admin-beautiful/badge/star.svg?theme=gray)](https://gitee.com/beautiful-japanese/backend-spring-boot)
+
 ## 相关项目仓库
+
 | 名称                                                                                        | 简介                                                   |
 | -------------------------------------------------------------------------------------------|-------------------------------------------------------|
 | [🚀 前端](https://codechina.csdn.net/yi-ni-ri-yu/ri_yu_xue_xi_bao_dian/-/tree/master)    |    Uni-App项目   |
-| [⚡ 后台管理](https://gitee.com/touzixinjiang/enterprise-post-back-end/tree/develop/)     |    前端-纯Vue                                                         |
-| [🌐 后台管理](https://gitee.com/touzixinjiang/enterprise-post-back-end/tree/develop/)     |   Django-SimpleUI                                                      |
+| [🎉 前端](https://gitee.com/beautiful-japanese/japanese-learning-app)     |    Android原声太APP（纯Kotlin编写)                                                         |
+| [📌 后端](https://gitee.com/beautiful-japanese/back-end-of-japanese-learning)    |    Go语言Gin-Gonic框架实现的版本   |
+| [⚡ 后台管理](https://gitee.com/beautiful-japanese/japanese-learning-background-management)     |    前端-纯Vue                                                         |
+| [🌐 后台管理](https://gitee.com/beautiful-japanese/beautiful-Japanese-admin-django)     |   Django-SimpleUI                                                      |
 
 ## 分支
 
@@ -22,6 +26,17 @@
 | --------------------------------------------------------------------------------------|-------------------------------------------------------|
 | [🚀 master](https://gitee.com/beautiful-japanese/backend-spring-boot/tree/master/)    | 目前默认版本 （稳定版）  |
 | [⚡ develop](https://gitee.com/beautiful-japanese/backend-spring-boot/tree/develop/)   | 开发版本（Beta版）                                                      |
+
+## 原型和UI设计稿
+
+<table>
+    <tr><td>访问地址</td><td><a href="https://lanhuapp.com/url/MH7iz">蓝湖</a></td></tr>
+    <tr><td>分享人</td><td>1903249375</td></tr>
+    <tr><td> 蓝湖团队</td><td>@Sadam</tr>
+    <tr><td>相关项目</td><td>旖旎日语</td></tr>
+    <tr><td>链接有效期</td><td>20211127~20211211</td></tr>
+    <tr><td>密码</td><td>7IG4</td></tr>
+</table>
 
 ## 联系我们
 
@@ -63,6 +78,7 @@ nohup java -jar ./data-manager-system.jar > app.log 2>&1 & echo $! > app.pid
 </a>
 
 ## 杰出贡献者
+
 <table>
 <tr>
 <td>
@@ -92,6 +108,7 @@ nohup java -jar ./data-manager-system.jar > app.log 2>&1 & echo $! > app.pid
 开发团队主要来自于**北京邮电大学**的一群意气蓬勃的大学生。
 
 ## 友情链接
+
 - [官网](http://59.110.225.84/)
 - [Uniapp插件市场](https://ext.dcloud.net.cn/)
 - [Uniapp跨端兼容-条件编译（文档）](https://uniapp.dcloud.io/platform?id=%e8%b7%a8%e7%ab%af%e5%85%bc%e5%ae%b9)

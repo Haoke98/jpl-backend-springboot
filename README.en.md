@@ -1,7 +1,7 @@
 <div align="center"><img width="200" src="https://codechina.csdn.net/uploads/-/system/group/avatar/506885/logo_196.png?width=72"/>
 <h1> Ini Education(Backend) </h1>
 
-简体中文 |  [English](./README.en.md)
+[简体中文](./README.md) |  English
 
 <p>
 本项目为广大渴望学习日语的用户提供方便的学习工具为目的的基础上建立的移动应用项目。
@@ -13,8 +13,10 @@
 | Name                                                                                       | Description                                                   |
 | -------------------------------------------------------------------------------------------|-------------------------------------------------------|
 | [🚀 前端](https://codechina.csdn.net/yi-ni-ri-yu/ri_yu_xue_xi_bao_dian/-/tree/master)    |    Uni-App项目   |
-| [⚡ 后台管理](https://gitee.com/touzixinjiang/enterprise-post-back-end/tree/develop/)     |    前端-纯Vue                                                         |
-| [🌐 后台管理](https://gitee.com/touzixinjiang/enterprise-post-back-end/tree/develop/)     |   Django-SimpleUI                                                      |
+| [🎉 前端](https://gitee.com/beautiful-japanese/japanese-learning-app)     |    Android原声太APP（纯Kotlin编写)                                                         |
+| [📌 后端](https://gitee.com/beautiful-japanese/back-end-of-japanese-learning)    |    Go语言Gin-Gonic框架实现的版本   |
+| [⚡ 后台管理](https://gitee.com/beautiful-japanese/japanese-learning-background-management)     |    前端-纯Vue                                                         |
+| [🌐 后台管理](https://gitee.com/beautiful-japanese/beautiful-Japanese-admin-django)     |   Django-SimpleUI                                                      |
 
 ## Branches
 
@@ -23,17 +25,28 @@
 | [🚀 master](https://gitee.com/beautiful-japanese/backend-spring-boot/tree/master/)    | 目前默认版本 （稳定版）  |
 | [⚡ develop](https://gitee.com/beautiful-japanese/backend-spring-boot/tree/develop/)   | 开发版本（Beta版）                                                      |
 
-## 联系我们
+## UI Design
 
-- 如果二次开发或者部署过程中有什么问题，可以随时联系我们。
-- 联系QQ： 1903249375
-- 联系微信：sadam190
-- 电话：15899198230
+<table>
+    <tr><td>Link</td><td><a href="https://lanhuapp.com/url/MH7iz">蓝湖</a></td></tr>
+    <tr><td>Who Share?</td><td>1903249375</td></tr>
+    <tr><td>Which team?</td><td>@Sadam</tr>
+    <tr><td>Related Project</td><td>旖旎日语</td></tr>
+    <tr><td>Link validity period</td><td>20211127~20211211</td></tr>
+    <tr><td>Password</td><td>7IG4</td></tr>
+</table>
+
+## Contact us
+
+- If you have any question about our project or product, please contact us.
+- QQ： 1903249375
+- Wechat：sadam190
+- Tel：+8615899198230
 
 <table>
 <tr>
 <td>
-<img width="200px" src="http://59.110.225.84/static/sdm/qr_qq.png">
+<img width="200px" src="http://59.110.225.84/static/img/qqGroupChatQR_Code.jpg">
 </td>
 </tr>
 </table>

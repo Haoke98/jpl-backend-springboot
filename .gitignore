@@ -33,5 +33,6 @@ build/
 .vscode/
 /src/test/java/bup/edu/cn/BeautifulJapanese/JasyptTest.java
 /src/test/java/bup/edu/cn/BeautifulJapanese/JasyptTests.java
-/src/main/java/bupt/edu/cn/BeautifulJapanese/utils/entryptor/Secret.java
+/src/main/java/iniedu/link/jpl/utils/entryptor/Secret.java
 /src/test/java/bupt/edu/cn/BeautifulJapanese/JasyptTests.java
+/src/test/java/iniedu/link/jpl/JasyptTests.java

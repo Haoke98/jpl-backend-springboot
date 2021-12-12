@@ -10,7 +10,7 @@
     </parent>
     <groupId>iniedu.link</groupId>
     <artifactId>jpl</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <name>旖旎日语-日语学习宝典（后端）</name>
     <description>provide the support for the API and Data service.</description>
     <properties>

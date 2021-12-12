@@ -15,7 +15,7 @@ public class UserService {
 
 
     public UserDO getLoginUser(HttpSession session) {
-        Long id = (Long) session.getAttribute(BaseConfig.SESSION.KEY_LOGED_IN_USER_ID);
+        Long id = (Long) session.getAttribute(BaseConfig.SESSION.KEY_LOGGED_IN_USER_ID);
         if (id == null) {
             return null;
         }
@@ -23,14 +23,7 @@ public class UserService {
     }
 
     public void setLoginUser(HttpSession session, UserDO user) {
-        session.setAttribute(BaseConfig.SESSION.KEY_LOGED_IN_USER_ID, user.getId());
+        session.setAttribute(BaseConfig.SESSION.KEY_LOGGED_IN_USER_ID, user.getId());
     }
 
-    public void setVisitor(HttpSession session, UserDO user) {
-        session.setAttribute(BaseConfig.SESSION.KEY_VISITOR, user);
-    }
-
-    public UserDO getVisitor(HttpSession session) {
-        return (UserDO) session.getAttribute(BaseConfig.SESSION.KEY_VISITOR);
-    }
 }

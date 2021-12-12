@@ -3,9 +3,11 @@ package iniedu.link.jpl.framework.auth;
 import iniedu.link.jpl.framework.SC;
 import iniedu.link.jpl.framework.ServiceCode;
 import iniedu.link.jpl.models.UserDO;
+import iniedu.link.jpl.models.VisitorDO;
 import iniedu.link.jpl.repository.RedisRepository;
-import iniedu.link.jpl.repository.UserRepository;
+import iniedu.link.jpl.repository.VisitorRepository;
 import iniedu.link.jpl.services.UserService;
+import iniedu.link.jpl.services.VisitorService;
 import iniedu.link.jpl.utils.IPUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
@@ -33,7 +35,9 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Autowired
     private UserService userService;
     @Autowired
-    private UserRepository userRepository;
+    private VisitorRepository visitorRepository;
+    @Autowired
+    private VisitorService visitorService;
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -79,14 +83,15 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             }
         }
         String ipAddress = IPUtils.getIpAddr(request);
-        UserDO visitor = userService.getVisitor(request.getSession());
-        if (visitor==null){
-            visitor= new UserDO();
+        VisitorDO visitor = visitorService.getVisitor(request.getSession());
+        if (visitor == null) {
+            visitor = new VisitorDO();
             visitor.visit();
         }
         visitor.setIp(ipAddress);
         visitor.breath();
-        userRepository.save(visitor);
+        visitorRepository.save(visitor);
+        visitorService.setVisitor(request.getSession(), visitor);
         //如果不需要登录，也不需要accessToken，则直接让请求通过。
         return true;
     }

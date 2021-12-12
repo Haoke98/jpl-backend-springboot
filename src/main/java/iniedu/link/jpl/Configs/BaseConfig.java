@@ -25,8 +25,7 @@ public class BaseConfig {
     }
 
     public static class SESSION {
-        public static final String KEY_LOGIN_USER = "session_key_login_user";
-        public static final String KEY_LOGED_IN_USER_ID = "session_key_login_user_id";
-        public static final String KEY_VISITOR = "session_key_visitor";
+        public static final String KEY_LOGGED_IN_USER_ID = "session_key_login_user_id";
+        public static final String KEY_VISITOR_ID = "session_key_visitor_id";
     }
 }

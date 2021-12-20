@@ -23,6 +23,10 @@
             <id>alimaven</id>
             <url>https://maven.aliyun.com/repository/public</url>
         </repository>
+            <repository>
+                <id>sadam98-maven-repo</id>
+                <url>https://gitee.com/sadam98/mvn-repo/raw/master</url>
+            </repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -86,6 +90,11 @@
             <version>2.6</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>io.github.Haoke98</groupId>
+            <artifactId>universal-tool-kit</artifactId>
+            <version>1.0.20-RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -121,38 +130,5 @@
             </resource>
         </resources>
     </build>
-    <!-- 不同的环境配置
-    @lastModifiedBy 萨达木(sadam)
-    @lastModifiedAt 2021/12/10 14:46 BEGIN -->
-    <profiles>
-        <profile>
-            <id>release</id>
-            <properties>
-                <api.version>${project.version}-RELEASE</api.version>
-                <server.port>7032</server.port>
-                <mysql.url>CB7sdLIbj4Yj58EHliYp+3H8aAOZKj2p3pQI+aEdmQGmh5LB9KSs8ff4h2E1fuUPuv5nArVlOzJjdTgiPMUgXg==</mysql.url>
-                <mysql.username>D0VcMpmPuf+IyS9EmVakcY53+3nedyCeHXhr6suLBTg=</mysql.username>
-                <mysql.password>2pDNymq8Edi0pUS5eWm7kp7+VsYFOSx3Br7xFMgcO1I=</mysql.password>
-                <hibernate.ddl-auto>update</hibernate.ddl-auto>
-                <flyway.locations>classpath:db/migration/release</flyway.locations>
-            </properties>
-        </profile>
-        <profile>
-            <id>beta</id>
-            <properties>
-                <api.version>${project.version}-BETA</api.version>
-                <server.port>8032</server.port>
-                <mysql.url>uX9NJ/ZPpTIHvwNnyqszetZciAnQHNDoUhsGRFJj5h+LW2/ofUkAgLjpHuWY/K9za4t2czmNU/jsoVZRBeSZNw==</mysql.url>
-                <mysql.username>luu7nLNCOuApUldwZQFCvwS997OB0xE1ubEWYx9gndY=</mysql.username>
-                <mysql.password>SnZ9o6+EuTRRMg41GMzEji5qK0M3QYhrbCw4LBfOUdw=</mysql.password>
-                <hibernate.ddl-auto>update</hibernate.ddl-auto>
-                <flyway.locations>classpath:db/migration/beta</flyway.locations>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
-    <!-- 不同的环境配置 END -->
 
 </project>

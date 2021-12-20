@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @EnableJpaAuditing
 @SpringBootApplication
-@ComponentScan(basePackages = "iniedu.link")
+@ComponentScan(basePackages = {"iniedu.link","io.github.Haoke98"})
 public class JplApplication {
 
     public static void main(String[] args) {

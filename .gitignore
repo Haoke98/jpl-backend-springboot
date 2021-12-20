@@ -36,3 +36,4 @@ build/
 /src/main/java/iniedu/link/jpl/utils/entryptor/Secret.java
 /src/test/java/bupt/edu/cn/BeautifulJapanese/JasyptTests.java
 /src/test/java/iniedu/link/jpl/JasyptTests.java
+/src/test/java/iniedu/link/jpl/EncryptTest.java

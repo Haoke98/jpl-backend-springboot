@@ -1,5 +1,6 @@
 package iniedu.link.jpl.framework.auth;
 
+import io.github.Haoke98.util.IPUtils;
 import iniedu.link.jpl.framework.SC;
 import iniedu.link.jpl.framework.ServiceCode;
 import iniedu.link.jpl.models.UserDO;
@@ -8,7 +9,6 @@ import iniedu.link.jpl.repository.RedisRepository;
 import iniedu.link.jpl.repository.VisitorRepository;
 import iniedu.link.jpl.services.UserService;
 import iniedu.link.jpl.services.VisitorService;
-import iniedu.link.jpl.utils.IPUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Component;

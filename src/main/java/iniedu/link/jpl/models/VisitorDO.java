@@ -29,11 +29,13 @@ public class VisitorDO {
     private Date deletedAt;
     /**
      * 游客访问时间
+     * <p>
      * 也就是游客在当前会话中第一次访问我们某一个接口的时候
      */
     private Date visitAt;
     /**
      * 游客最后一次呼吸时间
+     * <p>
      * 也就是游客在本次会话中最后一次向我们发起请求时间
      */
     private Date lastBreathAt;
@@ -45,7 +47,9 @@ public class VisitorDO {
 
     /**
      * 游客在本次会话中总的呼吸次数
+     * <p>
      * 也就是本次会话中游客发起请求总数
+     * <p>
      * 能够发现游客的活跃性
      */
     @Column(nullable = false)
@@ -60,6 +64,7 @@ public class VisitorDO {
 
     /**
      * 游客呼吸
+     * <p>
      * 把游客的每一次访问当做是最后一次访问来记录下来
      */
     public void breath() {

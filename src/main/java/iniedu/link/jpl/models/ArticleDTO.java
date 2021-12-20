@@ -1,6 +1,6 @@
 package iniedu.link.jpl.models;
 
-import com.github.Haoke98.util.TimeUtils;
+import io.github.Haoke98.util.TimeUtils;
 import lombok.Data;
 
 @Data

@@ -10,7 +10,7 @@
     </parent>
     <groupId>iniedu.link</groupId>
     <artifactId>jpl</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <name>旖旎日语-日语学习宝典（后端）</name>
     <description>provide the support for the API and Data service.</description>
     <properties>
@@ -93,7 +93,7 @@
         <dependency>
             <groupId>io.github.Haoke98</groupId>
             <artifactId>universal-tool-kit</artifactId>
-            <version>1.0.20-RELEASE</version>
+            <version>1.0.21-RELEASE</version>
         </dependency>
     </dependencies>
 

@@ -10,14 +10,7 @@ public class BaseConfig {
     public static class API {
         public static String VERSION = "开心了吗:)";
         public static final String ENCODING = "UTF-8";
-        @Value("${api_version}")
-        private String _VERSION;
 
-        @PostConstruct
-        void initAIP() {
-            VERSION = _VERSION;
-            System.out.println(BaseConfig.API.VERSION);
-        }
     }
 
     public static class REDIS {

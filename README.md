@@ -38,29 +38,55 @@
     <tr><td>密码</td><td>7IG4</td></tr>
 </table>
 
-## 联系我们
-
-- 如果有有关项目的什么问题，可以随时联系我们。
-- 联系QQ： 1903249375
-- 联系微信：sadam190
-- 电话：15899198230
-
-<table>
-<tr>
-<td>
-<img width="200px" src="http://59.110.225.84/static/img/qqGroupChatQR_Code.jpg">
-</td>
-</tr>
-</table>
-
 ## 🌱 运行JAR包命令
 
 ```bash
 # 直接console运行
-java -jar ./data-manager-system.jar
+java -jar -Xms512m -Xmx512m -Xmn200m -Xss256k ./jpl-1.0.6.jar
 # 后台运行
-nohup java -jar ./data-manager-system.jar > app.log 2>&1 & echo $! > app.pid
+nohup java -jar -Xms512m -Xmx512m -Xmn200m -Xss256k jpl-1.0.6.jar --spring.profiles.active=prod > jpl-1.0.6.0.log 2>&1 & echo $! > jpl.pid
 ```
+
+### 参数意义：
+
+<table>
+    <tr>
+        <td>-XX:MetaspaceSize=128m</td>
+        <td>元空间默认大小</td>
+    </tr>
+    <tr>
+        <td>-XX:MaxMetaspaceSize=128m</td>
+        <td>元空间最大大小</td>
+    </tr>
+    <tr>
+        <td>-Xms1024m</td>
+        <td>堆最大大小</td>
+    </tr>
+    <tr>
+        <td>-Xmx1024m</td>
+        <td>堆默认大小</td>
+    </tr>
+    <tr>
+        <td>-Xmn256m：新生代大小</td>
+        <td>元空间默认大小</td>
+    </tr>
+    <tr>
+        <td>-Xss256k：栈最大深度大小</td>
+        <td>元空间默认大小</td>
+    </tr>
+    <tr>
+        <td>-XX:SurvivorRatio=8：新生代分区比例 8:2</td>
+        <td>元空间默认大小</td>
+    </tr>
+    <tr>
+        <td>-XX:+UseConcMarkSweepGC：指定使用的垃圾收集器，这里使用CMS收集器</td>
+        <td>元空间默认大小</td>
+    </tr>
+    <tr>
+        <td>-XX:+PrintGCDetails：打印详细的GC日志</td>
+        <td>元空间默认大小</td>
+    </tr>
+</table>
 
 ## 我们承诺将定期赞助的开源项目（感谢巨人）
 
@@ -106,6 +132,21 @@ nohup java -jar ./data-manager-system.jar > app.log 2>&1 & echo $! > app.pid
 </table>
 
 开发团队主要来自于**北京邮电大学**的一群意气蓬勃的大学生。
+
+## 联系我们
+
+- 如果有有关项目的什么问题，可以随时联系我们。
+- 联系QQ： 1903249375
+- 联系微信：sadam190
+- 电话：15899198230
+
+<table>
+<tr>
+<td>
+<img width="200px" src="http://59.110.225.84/static/img/qqGroupChatQR_Code.jpg">
+</td>
+</tr>
+</table>
 
 ## 友情链接
 
